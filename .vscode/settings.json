@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/home/victor/.local/share/virtualenvs/grafana-viewers-t980Zhty/bin/python3.8"
+    "python.pythonPath": "/home/victor/.local/share/virtualenvs/grafana-viewers-D9MrU9aZ/bin/python3.8",
+    "python.envFile": "${workspaceFolder}/dev.env",
+    "python.terminal.activateEnvInCurrentTerminal": true
 }
