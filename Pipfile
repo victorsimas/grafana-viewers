@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "1.1.2"
+flask-jsonpify = "*"
+flask-sqlalchemy = "*"
+flask-restful = "*"
+pylint = "2.6.0"
+requests = "*"
+
+[requires]
+python_version = "3.8"
