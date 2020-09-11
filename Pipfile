@@ -7,8 +7,6 @@ verify_ssl = true
 
 [packages]
 flask = "1.1.2"
-flask-jsonpify = "*"
-flask-sqlalchemy = "*"
 flask-restful = "*"
 pylint = "2.6.0"
 requests = "*"

@@ -1,7 +1,7 @@
 class GrafanaConstants():
     imageQuery = {
         'orgId' : '1',
-        'from' : 'now-30m',
+        'from' : 'now-1h',
         'to' : 'now',
         'width' : '500',
         'height' : '300'
