@@ -48,7 +48,7 @@ class GrafanaMounter():
 
     def choose_dash_by_pattern(self, dashs):
         for dash in dashs:
-            if re.search(request.args['tag'], dash['title'], re.IGNORECASE):
+            if re.search(request.args['tag'], dash['title'], re.IGNORECASE) or re.search(request.args['tag'], dash['title'], re.IGNORECASE) and re.search(request.args['dashTitulo'], dash['title'], re.IGNORECASE):
                 return dash
             pass
         raise
@@ -73,6 +73,7 @@ class GrafanaMounter():
             'width': self.constants.imageQuery['width'],
             'height': self.constants.imageQuery['height']
         }
+        
         validator = []
         titulos = request.args['titulo']
         titulos_list = titulos.split(',')
