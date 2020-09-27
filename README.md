@@ -6,10 +6,21 @@ Inicie o ambiente virtual e instale as dependencias:
 - pipenv shell
 - pipenv install
 
-No caso do vscode, talvez seja necessário configurar o python path do seu ambiente virtual:
+Para instalar na maquina as dependencias:
+- pipenv install --system --deploy --ignore-pipfile
+
+Rode o app.py com o python3.8 ou maior
+
+## Visual studio code envFile
+
 ```
-"python.pythonPath": <caminho>
+{
+    "python.pythonPath": "<python_path_venv>",
+    "python.envFile": "${workspaceFolder}/<envFile>"
+}
+
 ```
+
 Para localizar, dentro do ambiente virtual execute:
 - pipenv --venv
 

@@ -10,7 +10,10 @@ class GrafanaService():
         header = { 'Authorization' : f"Bearer {os.environ['TOKEN_GRAFANA']}"}
         url= f"{os.environ['HOST_GRAFANA']}{endpoint}"
         try:
-            response = requests.get(url, headers=header, verify=False, params=params, timeout=10)
+            if params is not None:
+                response = requests.get(url, headers=header, verify=False, params=params, timeout=10)
+            else:
+                response = requests.get(url, verify=False, timeout=1)
             return make_response(jsonify(response.json()), HTTPStatus.OK)
         except (Exception) as exception:
             raise

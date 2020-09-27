@@ -76,8 +76,11 @@ class GrafanaMounter():
             'height': self.constants.imageQuery['height']
         }
         
+        if 'tempo' in request.args:
+            queryImage['from'] = f"now-{request.args['tempo']}"
+        
         validator = []
-        titulos = request.args['titulo']
+        titulos = request.args['painelTitulo']
         titulos_list = titulos.split(',')
         for titulo in titulos_list:
             if re.search(titulo, panel['title'], re.IGNORECASE):
