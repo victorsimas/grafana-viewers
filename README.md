@@ -24,6 +24,37 @@ Rode o app.py com o python3.8 ou maior
 Para localizar, dentro do ambiente virtual execute:
 - pipenv --venv
 
+## Contrato
+
+
+```
+
+{
+    "metodo": "GET",
+    "endpoint": "/grafana/search",
+    "queryParms": [
+        {
+            "name": dashTitulo,
+            "isOptional": true
+        },
+        {
+            "name": painelTitulo,
+            "isOptional": false
+        },
+        {
+            "name": tag,
+            "isOptional": false
+        },
+        {
+            "name": tempo,
+            "isOptional": true
+        }
+    ]
+}
+
+```
+
+
 ## Requisitos
 - Uma instância do grafana com o plugin de renderização
 - Configurar as variaveis de ambiente para execução, passando o host acompanhado do protocolo (http ou https) e o token de acesso
