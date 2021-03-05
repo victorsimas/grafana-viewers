@@ -11,7 +11,7 @@ Para instalar na maquina as dependencias:
 
 Rode o app.py com o python3.8 ou maior
 
-## Visual studio code envFile
+## Visual studio code settings.json
 
 ```
 {
