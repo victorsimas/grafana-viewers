@@ -38,6 +38,8 @@ htmlcov/
 .tox/
 .coverage
 .coverage.*
+*obj
+*bin
 .cache
 nosetests.xml
 coverage.xml

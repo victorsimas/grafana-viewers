@@ -1,10 +1,11 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using GrafanaViewers.ErrorHandling.Middleware;
-using GrafanaViewers.Services;
+using System.Text.Json;
+using Refit;
+using GrafanaViewers.StartupManager.Refit;
 
 namespace GrafanaViewers.StartupManager
 {
@@ -12,8 +13,7 @@ namespace GrafanaViewers.StartupManager
     {
         public static IServiceCollection AddDefaultServices(this IServiceCollection services)
         {
-            services.AddSingleton<Process>();
-            services.AddSingleton<ISearchService, ISearchService>();
+            services.AddSingleton<RefitConfiguration>();
 
             return services;
         }
@@ -53,10 +53,16 @@ namespace GrafanaViewers.StartupManager
             return services;
         }
 
-
         public static IApplicationBuilder UseApiErrorHandlerMiddleware(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<ApiErrorHanlder>();
+        }
+
+        public static IServiceCollection RegisterRefitService<TService>(this IServiceCollection services, string endpoint, JsonSerializerOptions jsonSerializerOptions = null) where TService : class
+        {
+            services.AddSingleton(x => RestService.For<TService>(endpoint, x.GetService<RefitConfiguration>().GetConfiguration(jsonSerializerOptions)));
+
+            return services;
         }
     }
 }
