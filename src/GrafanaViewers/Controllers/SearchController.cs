@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GrafanaViewers.Requests;
-using GrafanaViewers.Responses;
 using GrafanaViewers.Services;
 
 namespace GrafanaViewers.Controllers
@@ -24,14 +23,14 @@ namespace GrafanaViewers.Controllers
         }
 
         [HttpGet]
-        [Produces(typeof(Emails))]
+        // [Produces(typeof())]
         public async Task<IActionResult> Get([FromQuery] SearchRequest request)
         {
             return Ok(await Task.FromResult("Okay"));
         }
 
         [HttpGet("render")]
-        [Produces(typeof(Emails))]
+        // [Produces(typeof())]
         public async Task<IActionResult> GetImage([FromQuery] SearchRequest request)
         {
             return Ok(await Task.FromResult("Okay"));

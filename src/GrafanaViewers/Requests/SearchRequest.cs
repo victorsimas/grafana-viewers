@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-
 namespace GrafanaViewers.Requests
 {
     public abstract class SearchRequest
