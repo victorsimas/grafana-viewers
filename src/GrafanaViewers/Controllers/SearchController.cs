@@ -34,6 +34,8 @@ namespace GrafanaViewers.Controllers
         public async Task<IActionResult> GetImage([FromQuery] SearchRequest request)
         {
             return Ok(await Task.FromResult("Okay"));
+
+            
         }
     }
 }
